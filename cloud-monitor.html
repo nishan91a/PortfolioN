@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SOLIS Monitor - Cloud Monitoring Dashboard</title>
+    <link rel="stylesheet" href="css/cloud-monitor.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <header class="header">
+            <div class="logo">
+                <img src="images/logo.png" alt="Solis Monitor Logo">
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Settings</a></li>
+                    <li><a href="#">Profile</a></li>
+                </ul>
+            </nav>
+            <div class="user-profile">
+                <img src="images/user-avatar.png" alt="User Avatar">
+            </div>
+        </header>
+
+        <!-- Left Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <i class="fas fa-cloud"></i>
+                <span>SOLIS Monitor</span>
+            </div>
+            <nav class="sidebar-menu">
+                <button class="menu-item active" data-tab="dashboard">
+                    <i class="fas fa-chart-line"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="menu-item" data-tab="scheduler">
+                    <i class="fas fa-calendar"></i>
+                    <span>Scheduler</span>
+                </button>
+                <button class="menu-item" data-tab="roles">
+                    <i class="fas fa-users-cog"></i>
+                    <span>Roles</span>
+                </button>
+                <button class="menu-item" data-tab="server-actions">
+                    <i class="fas fa-cogs"></i>
+                    <span>Server Actions</span>
+                </button>
+            </nav>
+            <div class="back-section">
+                <a href="https://github.com" target="_blank" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+            </div>
+        </aside>
+
+        <!-- Main Content Area -->
+        <main class="main-content">
+            <!-- Dashboard Tab -->
+            <div class="tab-content active" id="dashboard-tab">
+                <div class="page-header">
+                    <h1>Servers Overview</h1>
+                    <p>Real-time cloud infrastructure monitoring</p>
+                </div>
+
+                <!-- Statistics Cards -->
+                <div class="stats-grid">
+                    <div class="stat-card power">
+                        <div class="stat-icon">
+                            <i class="fas fa-gas-pump"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Current Power</p>
+                            <p class="stat-value">1.655 <span class="unit">KW</span></p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card yield">
+                        <div class="stat-icon">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Daily Yield</p>
+                            <p class="stat-value">0 <span class="unit">KWh</span></p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card earnings">
+                        <div class="stat-icon">
+                            <i class="fas fa-piggy-bank"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Daily Earnings</p>
+                            <p class="stat-value">1.5B <span class="unit">₹</span></p>
+                        </div>
+                    </div>
+
+                    <div class="stat-card plant">
+                        <div class="stat-icon">
+                            <i class="fas fa-solar-panel"></i>
+                        </div>
+                        <div class="stat-info">
+                            <p class="stat-label">Running Plant</p>
+                            <div class="plant-stats">
+                                <span class="plant-item"><i class="fas fa-check-circle"></i> Running: 16</span>
+                                <span class="plant-item"><i class="fas fa-redo"></i> Restarting: 5</span>
+                                <span class="plant-item"><i class="fas fa-power-off"></i> Standby: 5</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Servers Status Section -->
+                <div class="servers-section">
+                    <h2>Servers Status</h2>
+                    <div class="table-wrapper">
+                        <table class="servers-table">
+                            <thead>
+                                <tr>
+                                    <th>Server Status</th>
+                                    <th>Server Name</th>
+                                    <th>Owner</th>
+                                    <th>Daily Yield</th>
+                                    <th>Last Update</th>
+                                </tr>
+                            </thead>
+                            <tbody id="servers-tbody">
+                                <!-- Server rows will be populated here -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="page-btn" id="prev-btn"><i class="fas fa-chevron-left"></i></button>
+                        <div class="page-numbers" id="page-numbers">
+                            <!-- Page numbers will be generated here -->
+                        </div>
+                        <button class="page-btn" id="next-btn"><i class="fas fa-chevron-right"></i></button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Scheduler Tab -->
+            <div class="tab-content" id="scheduler-tab">
+                <div class="placeholder-content">
+                    <i class="fas fa-calendar-alt"></i>
+                    <h2>Scheduler</h2>
+                    <p>Schedule maintenance and automated tasks for your cloud infrastructure</p>
+                </div>
+            </div>
+
+            <!-- Roles Tab -->
+            <div class="tab-content" id="roles-tab">
+                <div class="placeholder-content">
+                    <i class="fas fa-users-cog"></i>
+                    <h2>Roles & Permissions</h2>
+                    <p>Manage user roles and access permissions for your cloud services</p>
+                </div>
+            </div>
+
+            <!-- Server Actions Tab -->
+            <div class="tab-content" id="server-actions-tab">
+                <div class="placeholder-content">
+                    <i class="fas fa-cogs"></i>
+                    <h2>Server Actions</h2>
+                    <p>Perform actions on your cloud servers and infrastructure</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/cloud-monitor.js"></script>
+</body>
+</html>

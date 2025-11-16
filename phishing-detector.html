@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phishing Email/Message Detector</title>
+    <link rel="stylesheet" href="css/phishing-detector.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="detector-container">
+        <!-- Header -->
+        <header class="detector-header">
+            <div class="header-content">
+                <h1><i class="fas fa-shield-alt"></i> Phishing Detector</h1>
+                <p>Detect fraudulent transactions, phishing emails and messages</p>
+            </div>
+            <div class="header-actions">
+                <a href="index.html" class="btn-back"><i class="fas fa-arrow-left"></i> Back to Portfolio</a>
+                <a href="https://github.com" target="_blank" class="btn-github"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+        </header>
+
+        <main class="detector-main">
+            <!-- Email Detector Section -->
+            <section class="detector-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-envelope"></i> Email Detector</h2>
+                    <p>Analyze suspicious emails for phishing indicators</p>
+                </div>
+
+                <div class="email-container">
+                    <!-- Email Preview -->
+                    <div class="email-preview">
+                        <div class="email-header">
+                            <div class="email-from">
+                                <p><strong>From:</strong> <span class="suspicious">manager@external-domain.com</span></p>
+                                <p><strong>To:</strong> your.email@company.com</p>
+                                <p><strong>Subject:</strong> Urgent: Document Sharing Request</p>
+                            </div>
+                        </div>
+
+                        <div class="phishing-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>⚠️ WARNING: This email is PHISHING</strong>
+                            <button class="close-warning">×</button>
+                        </div>
+
+                        <div class="email-body">
+                            <p>Hi,</p>
+                            <p>Your manager is sharing a document with you. <a href="#" class="suspicious-link">Please click here to open</a></p>
+                            <p>Best regards,<br>Document Sharing System</p>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Panel -->
+                    <div class="analysis-panel">
+                        <h3>Why is this phishing?</h3>
+                        <ul class="phishing-reasons">
+                            <li><i class="fas fa-times-circle"></i> <strong>Suspicious Sender:</strong> Email domain doesn't match company domain</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Urgency Tactic:</strong> Uses "Urgent" to rush decision-making</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Suspicious Link:</strong> URL doesn't match legitimate domain</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Generic Greeting:</strong> Doesn't use your actual name</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Request for Action:</strong> Pressures to click unknown links</li>
+                        </ul>
+
+                        <div class="action-buttons">
+                            <button class="btn-report" onclick="reportPhishing('email')">
+                                <i class="fas fa-flag"></i> Report Phishing
+                            </button>
+                            <button class="btn-not-phishing" onclick="markNotPhishing('email')">
+                                <i class="fas fa-check-circle"></i> Not Phishing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SMS/Text Message Detector Section -->
+            <section class="detector-section">
+                <div class="section-header">
+                    <h2><i class="fas fa-sms"></i> SMS Message Detector</h2>
+                    <p>Analyze suspicious text messages for phishing indicators</p>
+                </div>
+
+                <div class="message-container">
+                    <!-- Message Preview -->
+                    <div class="message-preview sms">
+                        <div class="message-header">
+                            <p><strong>From:</strong> +1-800-XXX-XXXX</p>
+                            <p><strong>Time:</strong> Today, 2:45 PM</p>
+                        </div>
+
+                        <div class="phishing-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>⚠️ WARNING: This message is PHISHING</strong>
+                            <button class="close-warning">×</button>
+                        </div>
+
+                        <div class="message-body">
+                            <p>Your bank account has suspicious activity. Verify your identity now: https://bank-secure-verify.xyz/confirm</p>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Panel -->
+                    <div class="analysis-panel">
+                        <h3>Why is this phishing?</h3>
+                        <ul class="phishing-reasons">
+                            <li><i class="fas fa-times-circle"></i> <strong>Alarm Tactic:</strong> Claims suspicious activity to create panic</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Urgent Action:</strong> Demands immediate verification</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Suspicious URL:</strong> Domain doesn't match legitimate bank</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Personal Info Request:</strong> Asks for identity verification via link</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Spoofed Number:</strong> Generic number, not official bank contact</li>
+                        </ul>
+
+                        <div class="action-buttons">
+                            <button class="btn-report" onclick="reportPhishing('sms')">
+                                <i class="fas fa-flag"></i> Report Phishing
+                            </button>
+                            <button class="btn-not-phishing" onclick="markNotPhishing('sms')">
+                                <i class="fas fa-check-circle"></i> Not Phishing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- WhatsApp Message Detector Section -->
+            <section class="detector-section">
+                <div class="section-header">
+                    <h2><i class="fab fa-whatsapp"></i> WhatsApp Message Detector</h2>
+                    <p>Analyze suspicious WhatsApp messages for phishing indicators</p>
+                </div>
+
+                <div class="message-container">
+                    <!-- WhatsApp Message Preview -->
+                    <div class="message-preview whatsapp">
+                        <div class="message-header">
+                            <p><strong>Contact:</strong> Unknown Number</p>
+                            <p><strong>Time:</strong> Today, 3:15 PM</p>
+                        </div>
+
+                        <div class="phishing-warning">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <strong>⚠️ WARNING: This message is PHISHING</strong>
+                            <button class="close-warning">×</button>
+                        </div>
+
+                        <div class="message-body whatsapp-body">
+                            <p>🎉 Congratulations! You've won a FREE iPhone 14! 🏆 Claim your prize: http://win-iphone-free.com/claim?id=xyz123</p>
+                        </div>
+                    </div>
+
+                    <!-- Analysis Panel -->
+                    <div class="analysis-panel">
+                        <h3>Why is this phishing?</h3>
+                        <ul class="phishing-reasons">
+                            <li><i class="fas fa-times-circle"></i> <strong>Too Good to Be True:</strong> Offers expensive prize for free</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Unknown Sender:</strong> From contact you don't recognize</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Suspicious URL:</strong> Domain unrelated to legitimate services</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Urgency:</strong> Pressures immediate action to claim prize</li>
+                            <li><i class="fas fa-times-circle"></i> <strong>Spelling/Grammar:</strong> Suspicious use of emojis and generic text</li>
+                        </ul>
+
+                        <div class="action-buttons">
+                            <button class="btn-report" onclick="reportPhishing('whatsapp')">
+                                <i class="fas fa-flag"></i> Report Phishing
+                            </button>
+                            <button class="btn-not-phishing" onclick="markNotPhishing('whatsapp')">
+                                <i class="fas fa-check-circle"></i> Not Phishing
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tips Section -->
+            <section class="tips-section">
+                <h2><i class="fas fa-lightbulb"></i> How to Identify Phishing</h2>
+                <div class="tips-grid">
+                    <div class="tip-card">
+                        <i class="fas fa-envelope"></i>
+                        <h3>Check the Sender</h3>
+                        <p>Verify the email address or phone number. Be suspicious of slight variations.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-link"></i>
+                        <h3>Inspect Links</h3>
+                        <p>Hover over links to see the real URL. Don't click if it doesn't match the sender.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <h3>Watch for Urgency</h3>
+                        <p>Be wary of messages creating pressure to act immediately.</p>
+                    </div>
+                    <div class="tip-card">
+                        <i class="fas fa-question-circle"></i>
+                        <h3>Never Share Info</h3>
+                        <p>Legitimate companies never ask for passwords or personal data via email/SMS.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="detector-footer">
+            <p>&copy; 2024 Phishing Detector. Stay Safe Online.</p>
+        </footer>
+    </div>
+
+    <script src="js/phishing-detector.js"></script>
+</body>
+</html>
