@@ -1,0 +1,421 @@
+/* Phishing Detector Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+.detector-container {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.detector-header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+    color: white;
+    padding: 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.header-content h1 {
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.header-content p {
+    color: #ccc;
+    font-size: 1rem;
+}
+
+.header-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-back, .btn-github {
+    padding: 0.75rem 1.5rem;
+    border-radius: 6px;
+    text-decoration: none;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: all 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.btn-back {
+    background: #f97316;
+    color: white;
+}
+
+.btn-back:hover {
+    background: #ea580c;
+    transform: translateY(-2px);
+}
+
+.btn-github {
+    background: white;
+    color: #1a1a1a;
+}
+
+.btn-github:hover {
+    background: #f0f0f0;
+    transform: translateY(-2px);
+}
+
+/* Main Content */
+.detector-main {
+    flex: 1;
+    padding: 3rem 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Detector Section */
+.detector-section {
+    margin-bottom: 4rem;
+}
+
+.section-header {
+    margin-bottom: 2rem;
+}
+
+.section-header h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.section-header h2 i {
+    color: #f97316;
+}
+
+.section-header p {
+    color: #666;
+    font-size: 1rem;
+}
+
+/* Email Container */
+.email-container, .message-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+/* Email Preview */
+.email-preview, .message-preview {
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.email-header, .message-header {
+    background: #f8f8f8;
+    padding: 1.5rem;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.email-header p, .message-header p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.email-from p strong {
+    color: #1a1a1a;
+}
+
+.suspicious {
+    color: #d32f2f;
+    font-weight: 600;
+}
+
+.suspicious-link {
+    color: #1976d2;
+    text-decoration: underline;
+}
+
+/* Phishing Warning */
+.phishing-warning {
+    background: #ffebee;
+    border-left: 4px solid #d32f2f;
+    padding: 1rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: #d32f2f;
+    font-weight: 600;
+    position: relative;
+}
+
+.phishing-warning i {
+    font-size: 1.5rem;
+}
+
+.close-warning {
+    position: absolute;
+    right: 1rem;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #d32f2f;
+    transition: all 0.3s ease;
+}
+
+.close-warning:hover {
+    transform: scale(1.2);
+}
+
+/* Email/Message Body */
+.email-body, .message-body {
+    padding: 1.5rem;
+    color: #333;
+    line-height: 1.6;
+}
+
+.email-body p, .message-body p {
+    margin-bottom: 1rem;
+}
+
+.whatsapp-body {
+    background: #e8f5e9;
+    font-size: 0.95rem;
+}
+
+/* Analysis Panel */
+.analysis-panel {
+    background: white;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.analysis-panel h3 {
+    color: #1a1a1a;
+    margin-bottom: 1.5rem;
+    font-size: 1.2rem;
+}
+
+.phishing-reasons {
+    list-style: none;
+    margin-bottom: 2rem;
+}
+
+.phishing-reasons li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    padding: 0.75rem;
+    background: #fff3e0;
+    border-radius: 6px;
+    border-left: 3px solid #f97316;
+}
+
+.phishing-reasons i {
+    color: #d32f2f;
+    font-size: 1.1rem;
+    flex-shrink: 0;
+    margin-top: 0.25rem;
+}
+
+.phishing-reasons strong {
+    color: #1a1a1a;
+}
+
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.btn-report, .btn-not-phishing {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 0.95rem;
+}
+
+.btn-report {
+    background: #d32f2f;
+    color: white;
+}
+
+.btn-report:hover {
+    background: #b71c1c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(211, 47, 47, 0.3);
+}
+
+.btn-not-phishing {
+    background: #4caf50;
+    color: white;
+}
+
+.btn-not-phishing:hover {
+    background: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+}
+
+/* Tips Section */
+.tips-section {
+    background: white;
+    padding: 3rem 2rem;
+    border-radius: 8px;
+    margin-bottom: 3rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+.tips-section h2 {
+    font-size: 1.8rem;
+    color: #1a1a1a;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.tips-section h2 i {
+    color: #f97316;
+}
+
+.tips-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5rem;
+}
+
+.tip-card {
+    background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 100%);
+    padding: 1.5rem;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #ffe0b2;
+    transition: all 0.3s ease;
+}
+
+.tip-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.tip-card i {
+    font-size: 2.5rem;
+    color: #f97316;
+    margin-bottom: 1rem;
+}
+
+.tip-card h3 {
+    color: #1a1a1a;
+    margin-bottom: 0.75rem;
+    font-size: 1.1rem;
+}
+
+.tip-card p {
+    color: #555;
+    font-size: 0.9rem;
+    line-height: 1.5;
+}
+
+/* Footer */
+.detector-footer {
+    background: #1a1a1a;
+    color: white;
+    text-align: center;
+    padding: 2rem;
+    margin-top: auto;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .email-container, .message-container {
+        grid-template-columns: 1fr;
+    }
+
+    .detector-header {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+
+    .header-actions {
+        justify-content: center;
+    }
+}
+
+@media (max-width: 768px) {
+    .detector-header h1 {
+        font-size: 1.5rem;
+    }
+
+    .tips-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .detector-main {
+        padding: 1.5rem;
+    }
+
+    .detector-section {
+        margin-bottom: 2rem;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+    }
+
+    .section-header h2 {
+        font-size: 1.4rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .tips-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .btn-back, .btn-github {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .section-header h2 {
+        font-size: 1.2rem;
+    }
+
+    .phishing-reasons li {
+        font-size: 0.85rem;
+    }
+}

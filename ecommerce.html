@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppers Store - E-Commerce</title>
+    <link rel="stylesheet" href="css/ecommerce.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-shopping-bag"></i>
+                <span>Shoppers Store</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <div class="nav-icons">
+                <a href="#wishlist" class="icon-link"><i class="fas fa-heart"></i><span class="badge">0</span></a>
+                <a href="#cart" class="icon-link"><i class="fas fa-shopping-cart"></i><span class="badge">0</span></a>
+                <a href="https://github.com" target="_blank" class="icon-link github-icon" title="View on GitHub"><i class="fab fa-github"></i></a>
+                <a href="index.html" class="back-btn"><i class="fas fa-arrow-left"></i> Back</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Shoppers Store</h1>
+            <p>Your One-Stop Shop for Fashion, Books & Home Essentials</p>
+            <button class="cta-btn">Shop Now</button>
+        </div>
+    </section>
+
+    <!-- Product Categories Dashboard -->
+    <section id="products" class="products-section">
+        <h2>Explore Categories</h2>
+        <div class="products-grid">
+            <!-- Fashion Category -->
+            <div class="product-card">
+                <div class="product-image fashion-image">
+                    <img src="https://images.unsplash.com/photo-1539533057440-7814bae90f27?w=400&h=400&fit=crop" alt="Fashion">
+                </div>
+                <div class="product-info">
+                    <h3>Fashion</h3>
+                    <p class="tagline">Elegant Coats & Apparel</p>
+                    <p class="description">Discover the latest fashion trends with our exclusive collection of premium coats, dresses, and accessories.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-wishlist"><i class="fas fa-heart"></i> Wishlist</button>
+                        <button class="btn btn-checkout"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Books Category -->
+            <div class="product-card">
+                <div class="product-image books-image">
+                    <img src="https://images.unsplash.com/photo-1507842217343-583f20270319?w=400&h=400&fit=crop" alt="Books">
+                </div>
+                <div class="product-info">
+                    <h3>Books</h3>
+                    <p class="tagline">Literary Masterpieces</p>
+                    <p class="description">Immerse yourself in magical worlds with our curated selection of bestselling novels, fiction, and fantasy books.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-wishlist"><i class="fas fa-heart"></i> Wishlist</button>
+                        <button class="btn btn-checkout"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Home Needs Category -->
+            <div class="product-card">
+                <div class="product-image home-image">
+                    <img src="https://images.unsplash.com/photo-1584622281867-8d81c287064e?w=400&h=400&fit=crop" alt="Home Needs">
+                </div>
+                <div class="product-info">
+                    <h3>Home Needs</h3>
+                    <p class="tagline">Essential Home Appliances</p>
+                    <p class="description">Transform your home with our premium selection of washing machines, refrigerators, and modern home appliances.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-wishlist"><i class="fas fa-heart"></i> Wishlist</button>
+                        <button class="btn btn-checkout"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Electronics Category -->
+            <div class="product-card">
+                <div class="product-image electronics-image">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400&h=400&fit=crop" alt="Electronics">
+                </div>
+                <div class="product-info">
+                    <h3>Electronics</h3>
+                    <p class="tagline">Latest Tech Gadgets</p>
+                    <p class="description">Stay connected with our cutting-edge collection of smartphones, laptops, headphones, and accessories.</p>
+                    <div class="product-actions">
+                        <button class="btn btn-wishlist"><i class="fas fa-heart"></i> Wishlist</button>
+                        <button class="btn btn-checkout"><i class="fas fa-shopping-cart"></i> Add to Cart</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishlist Section -->
+    <section id="wishlist" class="wishlist-section">
+        <h2>Your Wishlist</h2>
+        <div class="cart-container">
+            <div class="empty-message">
+                <i class="fas fa-heart"></i>
+                <p>Your wishlist is empty. Add items to get started!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Checkout Section -->
+    <section id="cart" class="checkout-section">
+        <h2>Shopping Cart</h2>
+        <div class="cart-container">
+            <div class="empty-message">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Your cart is empty. Start shopping now!</p>
+            </div>
+        </div>
+        <button class="checkout-btn"><i class="fas fa-credit-card"></i> Proceed to Checkout</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Us</h4>
+                <p>Shoppers Store is your trusted destination for quality products at great prices.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#products">Products</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Contact Info</h4>
+                <p>Email: info@shoppersstore.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2025 Shoppers Store. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="js/ecommerce.js"></script>
+</body>
+</html>
